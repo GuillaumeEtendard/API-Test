@@ -16,9 +16,7 @@ class ApiController extends AbstractController{
 
         $getContacts = new ApiModel();
         $contacts = $getContacts->getContact($this->pdo);
-        return $result = xml_utils::xml_to_array($contacts);
-
-        //return json_encode($contacts, JSON_PRETTY_PRINT);
+        return json_encode($contacts, JSON_PRETTY_PRINT);
     }
 
     public function postAction()
